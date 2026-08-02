@@ -1,0 +1,4 @@
+[submodule "external/MacroPlacement"]
+	path = external/MacroPlacement
+	url = https://github.com/partcleda/MacroPlacement.git
+	branch = fix-scientific-notation-parsing

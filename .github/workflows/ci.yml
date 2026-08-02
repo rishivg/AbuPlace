@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: tests + lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        # The TILOS submodule is ~4 GB; the tests below skip gracefully without
+        # it, so it is deliberately not checked out here.
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install (harness + dev tools; the GPU placer's extra needs CUDA)
+        run: uv sync --extra dev
+
+      - name: Byte-compile every source file
+        run: uv run python -m compileall -q abuplace macro_place scripts test
+
+      - name: Lint
+        run: |
+          uv run --with pyflakes python -m pyflakes \
+            macro_place abuplace/placer.py abuplace/GPU abuplace/kernels test scripts \
+            || true
+
+      - name: Tests
+        run: uv run pytest test/ -q

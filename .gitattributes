@@ -1,0 +1,21 @@
+# Vendored third-party code: exclude from GitHub's language statistics and
+# collapse it in diffs, so the repo reflects this project's own code.
+placer/Xplace/**            linguist-vendored
+external/**                 linguist-vendored
+
+# Competition boilerplate preserved for context, not authored here.
+CHALLENGE.md                linguist-documentation
+SCORING.md                  linguist-documentation
+
+# Binary assets — never try to diff or merge these.
+*.pt                        binary
+*.so                        binary
+*.dat                       binary
+*.gif                       binary
+*.png                       binary
+*.lef                       binary
+*.def                       binary
+
+# Normalize line endings for text.
+* text=auto eol=lf
+*.sh                        text eol=lf

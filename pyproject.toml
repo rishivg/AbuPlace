@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "macro-place"
+version = "0.1.0"
+description = "AbuPlace — a GPU macro placer that optimizes the exact proxy cost"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE.md"}
+authors = [
+    {name = "Rishi Gottumukkala", email = "rishiv@gmail.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.20.0",
+    "matplotlib>=3.5.0",
+    "tqdm>=4.65.0",
+    "absl-py>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0; python_version >= '3.8.1'",
+]
+# Deps for abuplace/placer.py. Pinned for ABI compat with
+# the prebuilt Xplace .so files in
+# abuplace/Xplace/cpp_to_py/cpybin/ (cpython-3.12 +
+# libtorch 2.10 cu12). Install with:
+#   uv sync --extra abuplace
+# Markers gate to Py>=3.10 so the resolver doesn't try torch>=2.10 on
+# the 3.8/3.9 branches advertised in requires-python.
+abuplace = [
+    "torch>=2.10.0,<2.12 ; python_version >= '3.10'",
+    "torchvision>=0.25.0,<0.27 ; python_version >= '3.10'",
+    "seaborn>=0.13 ; python_version >= '3.10'",
+    "igraph>=0.11 ; python_version >= '3.10'",
+    "pulp>=2.7 ; python_version >= '3.10'",
+    "numba>=0.60 ; python_version >= '3.10'",
+    "pandas>=2.0 ; python_version >= '3.10'",
+]
+
+[project.scripts]
+evaluate = "macro_place.evaluate:main"
+
+[project.urls]
+Homepage = "https://github.com/partcl/partcl-marco-place-challenge"
+Repository = "https://github.com/partcl/partcl-marco-place-challenge"
+Issues = "https://github.com/partcl/partcl-marco-place-challenge/issues"
+
+[tool.setuptools.packages.find]
+include = ["macro_place*"]
+
+[tool.setuptools.package-data]
+macro_place = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"

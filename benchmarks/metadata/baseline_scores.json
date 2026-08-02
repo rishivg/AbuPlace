@@ -1,0 +1,58 @@
+{
+  "ariane133": {
+    "num_macros": 133,
+    "num_nets": 22584,
+    "canvas_width": 1433.406,
+    "canvas_height": 1433.406,
+    "initial_placement": {
+      "proxy_cost": 0.7109266519546509,
+      "wirelength_cost": 0.04972240701317787,
+      "density_cost": 0.6067349910736084,
+      "congestion_cost": 0.7156734869659169,
+      "overlap_count": 0,
+      "total_overlap_area": 0.0
+    }
+  },
+  "ariane136": {
+    "num_macros": 136,
+    "num_nets": 23067,
+    "canvas_width": 1446.359,
+    "canvas_height": 1446.359,
+    "initial_placement": {
+      "proxy_cost": 0.7097474336624146,
+      "wirelength_cost": 0.047830142080783844,
+      "density_cost": 0.6082658767700195,
+      "congestion_cost": 0.7155686335356781,
+      "overlap_count": 0,
+      "total_overlap_area": 0.0
+    }
+  },
+  "nvdla": {
+    "num_macros": 128,
+    "num_nets": 40606,
+    "canvas_width": 2127.922,
+    "canvas_height": 2127.922,
+    "initial_placement": {
+      "proxy_cost": 0.7568605542182922,
+      "wirelength_cost": 0.04918232932686806,
+      "density_cost": 0.6706239581108093,
+      "congestion_cost": 0.7447325211866531,
+      "overlap_count": 0,
+      "total_overlap_area": 0.0
+    }
+  },
+  "mempool_tile": {
+    "num_macros": 20,
+    "num_nets": 32944,
+    "canvas_width": 885.39,
+    "canvas_height": 885.39,
+    "initial_placement": {
+      "proxy_cost": 0.9610130786895752,
+      "wirelength_cost": 0.052787043154239655,
+      "density_cost": 1.0866962671279907,
+      "congestion_cost": 0.7297557092274636,
+      "overlap_count": 0,
+      "total_overlap_area": 0.0
+    }
+  }
+}

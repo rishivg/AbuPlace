@@ -1,0 +1,102 @@
+# Visualizations
+vis/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Data and results
+benchmarks/raw/
+results/
+*.pt
+*.pth
+*.ckpt
+
+# Exception: Allow processed public benchmarks (so users can clone and use immediately)
+!benchmarks/processed/
+!benchmarks/processed/public/
+!benchmarks/processed/public/*.pt
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Models
+models/
+checkpoints/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Regenerated Xplace LEF/DEF cache (rebuilt per run; never source)
+benchmarks/xplace_cache/*.lef
+benchmarks/xplace_cache/*.def
+# MacroPlacement evaluator (submodule)
+# Keep the submodule but ignore unnecessary files
+external/MacroPlacement/Testcases/
+external/MacroPlacement/ExperimentalData/
+external/MacroPlacement/Docs/OurProgress/
+external/MacroPlacement/Flows/
+external/MacroPlacement/.git/
+
+# Internal dev tooling (not for participants)
+scripts/test_*.py
+scripts/debug_*.py
+scripts/run_random_ibm.py
+scripts/run_rowpack_ibm.py
+scripts/visualize_*.py
+scripts/__pycache__/
+src/orfs_integration/
+docs/
+output/
+BENCHMARK_EVALUATION_RESULTS.md
+NETLIST_CLEANING_SUMMARY.md
+
+
+# Claude Code local settings
+.claude/

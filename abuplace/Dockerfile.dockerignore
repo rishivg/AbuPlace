@@ -1,0 +1,47 @@
+# Build context filters for abuplace/Dockerfile.
+# Build context = repo root.
+#
+# Buildkit honors `<dockerfile-path>.dockerignore` (since Docker 23.x).
+# If you build with a non-buildkit client and the context root has its
+# own .dockerignore, that one wins instead — keep that in mind.
+
+# VCS / IDE / harness noise
+.git
+.gitignore
+.github
+.gitmodules
+.gitattributes
+.vscode
+.idea
+.claude
+.cache
+.cursor
+
+# Python build/runtime artifacts
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+.venv
+venv
+*.egg-info
+**/*.egg-info
+
+# Large data — mounted at runtime, not baked in
+external
+benchmarks
+assets
+test
+baselines
+
+# Misc
+*.log
+*.tmp
+docs
+scripts
+output
+SETUP.md
+SCORING.md
+CHALLENGE.md

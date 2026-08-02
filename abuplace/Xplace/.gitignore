@@ -1,0 +1,19 @@
+*.png
+*.pdf
+.vscode/
+__pycache__/
+*.so
+# cpp_to_py/cpybin/*.so are the prebuilt CUDA extensions. They are NOT tracked:
+# fetch them with scripts/fetch_xplace_binaries.sh, or build Xplace from upstream.
+build/
+*.log
+*.npy
+*.csv
+*.pt
+*.pkl
+*.json
+result/
+data/cad
+data/raw
+misc
+.venv/
